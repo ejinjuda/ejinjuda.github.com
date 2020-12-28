@@ -1,0 +1,83 @@
+
+body{
+  margin: 0px;
+}
+ul{
+  list-style-type: none;
+  padding-left: 0px;      
+}
+a {
+  text-decoration: none;
+  color: white;     
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 10px;
+  background-color: darkorchid;
+  color: white;
+}
+.navbar .navbar-logo,
+.navbar .navbar-menu,
+.navbar .navbar-sns{
+  display: flex;     
+}
+/* logo */
+.navbar .navbar-logo li:nth-child(1) {
+  margin-right: 5px;
+  color: lightpink;    
+}
+/* GNB 메뉴 */
+.navbar .navbar-menu li {
+  padding: 8px 12px;
+  border-radius: 5px;
+} 
+.navbar .navbar-menu li:hover {
+  background-color: magenta;
+  transition: background-color 1s ease;
+}    
+.navbar .navbar-menu li a:hover {
+  text-decoration: underline;
+}
+
+.navbar .navbar-sns li {
+  margin-left: 3px;
+}    
+.navbar #hamburger{
+  display: none;
+  position:absolute;
+  top:20px; right:20px;
+}
+.navbar .navbar-logo{
+  font-family: Noto Serif KR;
+}
+.navbar .navbar-menu{
+  font-family: Langar;
+}  
+    
+@media screen and (max-width:767px){
+  .navbar,
+  .navbar .navbar-menu {
+    flex-direction: column;
+  }
+  .navbar #hamburger{
+    display: block;
+    /* text-align: center; */
+  }
+  .navbar .navbar-menu,
+  .navbar .navbar-sns{
+    display: none;
+  }
+  .navbar .navbar-logo{
+    align-self: flex-start;
+  }
+  .navbar .navbar-logo.active{
+    align-self: center;
+  }
+  .navbar .navbar-menu.active,
+  .navbar .navbar-sns.active{
+    display: flex;
+    text-align: center;
+  }      
+}
